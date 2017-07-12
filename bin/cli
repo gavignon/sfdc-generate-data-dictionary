@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+const orchestrator = require('../index.js');
+const pjson = require('../package.json');
+
+program
+  .description(pjson.description)
+  .version(pjson.version)
+  .option('-u, --username [username]', 'salesforce username')
+  .option('-p, --password [password]', 'salesforce password')
+  .option('-l, --loginUrl [loginUrl]', 'salesforce login URL [https://login.salesforce.com]', 'https://login.salesforce.com')
+  .option('-c, --customObjects [customObjects]', 'retrieve all custom objects [true]', true)
+  .option('-d, --deleteFolders [deleteFolders]', 'delete/clean temp folders [true]', true)
+  .option('-o, --output [dir]', 'salesforce data dictionary directory path [.]', '.')
+  .parse(process.argv);
+
+orchestrator(program, console.log)
+.catch(function(err){
+  throw err;
+});

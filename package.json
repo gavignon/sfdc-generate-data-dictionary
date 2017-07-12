@@ -1,0 +1,28 @@
+{
+  "name": "sfdc-generate-data-dictionary",
+  "version": "1.0.0",
+  "description": "Generate data dictionary from a Salesforce Org",
+  "main": "index.js",
+  "bin": {
+    "sgd": "./bin/cli"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gavignon/sfdc-generate-data-dictionary.git"
+  },
+  "keywords": [
+    "salesforce",
+    "data-dictionary"
+  ],
+  "author": "Gil Avignon <gil.avignon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bytes": "^2.5.0",
+    "commander": "^2.11.0",
+    "excel4node": "^1.2.1",
+    "jsforce": "^1.8.0"
+  }
+}
