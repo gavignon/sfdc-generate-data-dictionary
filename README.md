@@ -25,12 +25,14 @@ $ sgd -h
 
   Options:
 
-    -u, --username               salesforce username
-    -p, --password               salesforce user password
-    -l, --loginUrl               salesforce login URL [https://login.salesforce.com]
-    -c, --customObjects          retrieve all custom objects [true]
-    -d, --deleteFolders          delete/clean temp folders [true]
-    -o, --output                 salesforce data dictionary directory path [.]
+    -u, --username [username]                salesforce username
+    -p, --password [password]                salesforce password
+    -l, --loginUrl [loginUrl]                salesforce login URL [https://login.salesforce.com]
+    -c, --customObjects [customObjects]      retrieve all custom objects [true]
+    -s, --standardObjects [standardObjects]  standard sObjects to retrieve separated with commas
+    -D, --debug [debug]                      generate debug log file [false]
+    -d, --deleteFolders [deleteFolders]      delete/clean temp folders [true]
+    -o, --output [dir]                       salesforce data dictionary directory path [.]
 ```
 
 ### Module
@@ -44,6 +46,7 @@ $ sgd -h
       'loginUrl': options.loginUrl,
       'projectName': '',
       'allCustomObjects': true,
+      'debug': false,
       'cleanFolders': true,
       'output':'.'
       }, console.log);

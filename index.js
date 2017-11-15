@@ -18,17 +18,35 @@ module.exports = (config, logger) => {
   if (typeof config.output === 'undefined' || config.output === null) {
     config.output = '.';
   }
+  if (typeof config.debug === 'undefined' || config.debug === null) {
+    config.debug = false;
+  }
   if (typeof config.projectName === 'undefined' || config.projectName === null) {
     config.projectName = 'PROJECT';
   }
   if (typeof config.allCustomObjects === 'undefined' || config.allCustomObjects === null) {
     config.allCustomObjects = true;
   }
-  if (typeof config.objects === 'undefined' || config.objects === null) {
+  if (typeof config.standardObjects === 'undefined' || config.standardObjects === null) {
     config.objects = [
       'Account',
       'Contact'
     ];
+  }else{
+    // If an array is passed to the module
+    if(Array.isArray(config.standardObjects)){
+      config.objects = config.standardObjects;
+    }else{
+      // Check and parse standObjects string for command-line
+      try{
+        config.objects = config.standardObjects.split(',');
+      }catch(e){
+        let errorMessage = 'Unable to parse standardObjects parameter';
+        if(config.debug)
+          errorMessage += ' : ' + e;
+        throw new Error(errorMessage);
+      }
+    }
   }
   if (typeof config.columns === 'undefined' || config.columns === null) {
     config.columns = {
@@ -42,9 +60,10 @@ module.exports = (config, logger) => {
     };
   }
 
+  var utils = new Utils();
+
   // Clean folders that contain API files
   if (config.cleanFolders) {
-    let utils = new Utils();
     const statusRmDescribe = utils.rmDir(__dirname + '/files/describe', '.json', false);
     const statusRmMetadata = utils.rmDir(__dirname + '/files/metadata', '.json', false);
     logger('File folders cleaned');
@@ -60,6 +79,10 @@ module.exports = (config, logger) => {
     // Salesforce connection
     conn.login(config.username, config.password).then(result => {
       logger('Connected as ' + config.username);
+      if(config.debug){
+        utils.log('Connected as ' + config.username, config);
+      }
+
       if (config.allCustomObjects) {
         conn.describeGlobal().then(res => {
           for (let i = 0; i < res.sobjects.length; i++) {
@@ -71,6 +94,10 @@ module.exports = (config, logger) => {
             if (object.custom && (object.name.indexOf('__c') !== -1) && (object.name.split('__').length - 1 < 2))
               config.objects.push(object.name);
           }
+
+
+            if(config.debug)
+              utils.log(JSON.stringify(config.objects), config);
 
           const downloader = new Downloader(config, logger, conn);
           const builder = new ExcelBuilder(config, logger);
@@ -93,10 +120,13 @@ module.exports = (config, logger) => {
           downloader.execute().then(result => {
             logger(result + ' downloaded');
             // Generate the excel file
-            builder.generate().then(result => {
+            return builder.generate();
+
+          }).then(result => {
+
               resolve();
             });
-          })
+
         }
       }
     }).catch(reject);

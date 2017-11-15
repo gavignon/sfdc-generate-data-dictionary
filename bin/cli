@@ -12,6 +12,8 @@ program
   .option('-p, --password [password]', 'salesforce password')
   .option('-l, --loginUrl [loginUrl]', 'salesforce login URL [https://login.salesforce.com]', 'https://login.salesforce.com')
   .option('-c, --customObjects [customObjects]', 'retrieve all custom objects [true]', true)
+  .option('-s, --standardObjects [standardObjects]', 'standard sObjects to retrieve separated with commas')
+  .option('-D, --debug [debug]', 'generate debug log file [false]', false)
   .option('-d, --deleteFolders [deleteFolders]', 'delete/clean temp folders [true]', true)
   .option('-o, --output [dir]', 'salesforce data dictionary directory path [.]', '.')
   .parse(process.argv);
