@@ -54,6 +54,7 @@ module.exports = (config, logger) => {
       'Mandatory': 3,
       'Name': 25,
       'Description': 90,
+      'Helptext': 90,
       'APIName': 25,
       'Type': 27,
       'Values': 45
