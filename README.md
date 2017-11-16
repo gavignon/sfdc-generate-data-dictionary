@@ -52,6 +52,24 @@ $ sgd -h
       }, console.log);
 ```
 
+## Debugging
+
+Since **1.0.3**, you can now run the tool in debug mode to generate a file that contains information about each step during the process.
+Information contained in the debug files will be enriched following your feedback to have the most accurate information for debugging.
+
+Please paste the content of this file in your issues to help analysis.
+
+### Debug files location
+
+For a local module:
+```
+CURRENT_DIR/node_modules/sfdc-generate-data-dictionary/files
+ ```
+
+ Global module:
+ - Mac: /usr/local/lib/node_modules/sfdc-generate-data-dictionary/files
+ - Windows: %AppData%\npm\node_modules\sfdc-generate-data-dictionary\files
+
 ## Built With
 
 - [commander](https://github.com/tj/commander.js/) - The complete solution for node.js command-line interfaces, inspired by Ruby's commander.
