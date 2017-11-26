@@ -1,4 +1,4 @@
-# sfdc-generate-data-dictionary
+# ![logo](https://gdurl.com/U1xa) sfdc-generate-data-dictionary
 
 generate data dictionary from a Salesforce Org
 
@@ -11,6 +11,10 @@ Works in Unix like system. Windows is not tested.
 ```
 npm install -g sfdc-generate-data-dictionary
 ```
+
+## Screenshots
+
+![screenshot-1](https://gdurl.com/TcCI)
 
 ## Usage
 
