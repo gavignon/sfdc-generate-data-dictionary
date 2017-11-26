@@ -1,6 +1,6 @@
 {
   "name": "sfdc-generate-data-dictionary",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate data dictionary from a Salesforce Org",
   "main": "index.js",
   "bin": {

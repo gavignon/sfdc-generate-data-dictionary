@@ -21,6 +21,9 @@ module.exports = (config, logger) => {
   if (typeof config.debug === 'undefined' || config.debug === null) {
     config.debug = false;
   }
+  if (typeof config.excludeManagedPackage === 'undefined' || config.excludeManagedPackage === null) {
+    config.excludeManagedPackage = true;
+  }
   if (typeof config.projectName === 'undefined' || config.projectName === null) {
     config.projectName = 'PROJECT';
   }
@@ -92,8 +95,14 @@ module.exports = (config, logger) => {
               config.objects = [];
 
             // If the sObject is a real custom object
-            if (object.custom && (object.name.indexOf('__c') !== -1) && (object.name.split('__').length - 1 < 2))
-              config.objects.push(object.name);
+            if (object.custom && (object.name.indexOf('__c') !== -1)){
+              if(config.excludeManagedPackage){
+                if((object.name.split('__').length - 1 < 2))
+                  config.objects.push(object.name);
+              }else{
+                config.objects.push(object.name);
+              }
+            }
           }
 
 

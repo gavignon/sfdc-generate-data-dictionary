@@ -14,6 +14,7 @@ program
   .option('-c, --customObjects [customObjects]', 'retrieve all custom objects [true]', true)
   .option('-s, --standardObjects [standardObjects]', 'standard sObjects to retrieve separated with commas')
   .option('-D, --debug [debug]', 'generate debug log file [false]', false)
+  .option('-e, --excludeManagedPackage [excludeManagedPackage]', 'exclude managed packaged [true]', true)
   .option('-d, --deleteFolders [deleteFolders]', 'delete/clean temp folders [true]', true)
   .option('-o, --output [dir]', 'salesforce data dictionary directory path [.]', '.')
   .parse(process.argv);
