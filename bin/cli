@@ -16,6 +16,8 @@ program
   .option('-D, --debug [debug]', 'generate debug log file [false]', false)
   .option('-e, --excludeManagedPackage [excludeManagedPackage]', 'exclude managed packaged [true]', true)
   .option('-d, --deleteFolders [deleteFolders]', 'delete/clean temp folders [true]', true)
+  .option('-ht, --hideTechFields [hideTechFields]', 'hide tech fields', false)
+  .option('-tp, --techFieldPrefix [techFieldPrefix]', 'Tech field prefix', 'TECH_')
   .option('-o, --output [dir]', 'salesforce data dictionary directory path [.]', '.')
   .parse(process.argv);
 

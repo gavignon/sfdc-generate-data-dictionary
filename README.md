@@ -1,6 +1,6 @@
-# ![logo](https://gdurl.com/U1xa) sfdc-generate-data-dictionary
+# ![logo](https://gdurl.com/U1xa)  sfdc-generate-data-dictionary
 
-generate data dictionary from a Salesforce Org
+Generate data dictionary from a Salesforce Org
 
 ## Getting Started
 
@@ -36,6 +36,8 @@ $ sgd -h
     -s, --standardObjects [standardObjects]  standard sObjects to retrieve separated with commas
     -D, --debug [debug]                      generate debug log file [false]
     -d, --deleteFolders [deleteFolders]      delete/clean temp folders [true]
+    -ht, --hideTechFields [hideTechFields]   hide tech fields [false]
+    -tp, --techFieldPrefix [techFieldPrefix] Tech field prefix ['TECH_']
     -o, --output [dir]                       salesforce data dictionary directory path [.]
 ```
 

@@ -51,6 +51,12 @@ module.exports = (config, logger) => {
       }
     }
   }
+  if (typeof config.techFieldPrefix === 'undefined' || config.techFieldPrefix === null) {
+    config.techFieldPrefix = 'TECH_';
+  }
+  if (typeof config.hideTechFields === 'undefined' || config.hideTechFields === null) {
+    config.hideTechFields = false;
+  }
   if (typeof config.columns === 'undefined' || config.columns === null) {
     config.columns = {
       'ReadOnly': 5,
