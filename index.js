@@ -30,8 +30,8 @@ module.exports = (config, logger) => {
   if (typeof config.allCustomObjects === 'undefined' || config.allCustomObjects === null) {
     config.allCustomObjects = true;
   }
-  if (typeof config.generateChart === 'undefined' || config.generateChart === null) {
-    config.generateChart = true;
+  if (typeof config.lucidchart === 'undefined' || config.lucidchart === null) {
+    config.lucidchart = true;
   }
   if (typeof config.standardObjects === 'undefined' || config.standardObjects === null) {
     config.objects = [
