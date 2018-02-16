@@ -12,6 +12,7 @@ program
   .option('-p, --password [password]', 'salesforce password')
   .option('-l, --loginUrl [loginUrl]', 'salesforce login URL [https://login.salesforce.com]', 'https://login.salesforce.com')
   .option('-c, --customObjects [customObjects]', 'retrieve all custom objects [true]', true)
+  .option('-lc, --lucidchart [lucidchart]', 'generate ERD file for Lucidchart [true]', true)
   .option('-s, --standardObjects [standardObjects]', 'standard sObjects to retrieve separated with commas')
   .option('-D, --debug [debug]', 'generate debug log file [false]', false)
   .option('-e, --excludeManagedPackage [excludeManagedPackage]', 'exclude managed packaged [true]', true)

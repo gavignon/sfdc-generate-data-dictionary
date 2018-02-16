@@ -30,22 +30,26 @@ module.exports = (config, logger) => {
   if (typeof config.allCustomObjects === 'undefined' || config.allCustomObjects === null) {
     config.allCustomObjects = true;
   }
+  if (typeof config.generateChart === 'undefined' || config.generateChart === null) {
+    config.generateChart = true;
+  }
   if (typeof config.standardObjects === 'undefined' || config.standardObjects === null) {
     config.objects = [
       'Account',
-      'Contact'
+      'Contact',
+      'User'
     ];
-  }else{
+  } else {
     // If an array is passed to the module
-    if(Array.isArray(config.standardObjects)){
+    if (Array.isArray(config.standardObjects)) {
       config.objects = config.standardObjects;
-    }else{
+    } else {
       // Check and parse standObjects string for command-line
-      try{
+      try {
         config.objects = config.standardObjects.split(',');
-      }catch(e){
+      } catch (e) {
         let errorMessage = 'Unable to parse standardObjects parameter';
-        if(config.debug)
+        if (config.debug)
           errorMessage += ' : ' + e;
         throw new Error(errorMessage);
       }
@@ -89,7 +93,7 @@ module.exports = (config, logger) => {
     // Salesforce connection
     conn.login(config.username, config.password).then(result => {
       logger('Connected as ' + config.username);
-      if(config.debug){
+      if (config.debug) {
         utils.log('Connected as ' + config.username, config);
       }
 
@@ -101,19 +105,18 @@ module.exports = (config, logger) => {
               config.objects = [];
 
             // If the sObject is a real custom object
-            if (object.custom && (object.name.indexOf('__c') !== -1)){
-              if(config.excludeManagedPackage){
-                if((object.name.split('__').length - 1 < 2))
+            if (object.custom && (object.name.indexOf('__c') !== -1)) {
+              if (config.excludeManagedPackage) {
+                if ((object.name.split('__').length - 1 < 2))
                   config.objects.push(object.name);
-              }else{
+              } else {
                 config.objects.push(object.name);
               }
             }
           }
 
-
-            if(config.debug)
-              utils.log(JSON.stringify(config.objects), config);
+          if (config.debug)
+            utils.log(JSON.stringify(config.objects), config);
 
           const downloader = new Downloader(config, logger, conn);
           const builder = new ExcelBuilder(config, logger);
@@ -139,9 +142,8 @@ module.exports = (config, logger) => {
             return builder.generate();
 
           }).then(result => {
-
-              resolve();
-            });
+            resolve();
+          });
 
         }
       }

@@ -1,6 +1,6 @@
 # ![logo](https://gdurl.com/U1xa)  sfdc-generate-data-dictionary
 
-Generate data dictionary from a Salesforce Org
+Generate data dictionary from a Salesforce Org. This tool can also generate a file that can be imported in Lucidchart to define entities and relationships.
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ $ sgd -h
 
   Usage: sgd [options]
 
-  generate data dictionary from a Salesforce Org
+  Generate data dictionary from a Salesforce Org
 
   Options:
 
@@ -33,6 +33,7 @@ $ sgd -h
     -p, --password [password]                salesforce password
     -l, --loginUrl [loginUrl]                salesforce login URL [https://login.salesforce.com]
     -c, --customObjects [customObjects]      retrieve all custom objects [true]
+    -lc, --lucidchart [lucidchart]           generate ERD file for Lucidchart [true]
     -s, --standardObjects [standardObjects]  standard sObjects to retrieve separated with commas
     -D, --debug [debug]                      generate debug log file [false]
     -d, --deleteFolders [deleteFolders]      delete/clean temp folders [true]
