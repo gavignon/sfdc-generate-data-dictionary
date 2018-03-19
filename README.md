@@ -29,17 +29,18 @@ $ sgd -h
 
   Options:
 
-    -u, --username [username]                salesforce username
-    -p, --password [password]                salesforce password
-    -l, --loginUrl [loginUrl]                salesforce login URL [https://login.salesforce.com]
-    -c, --customObjects [customObjects]      retrieve all custom objects [true]
-    -lc, --lucidchart [lucidchart]           generate ERD file for Lucidchart [true]
-    -s, --standardObjects [standardObjects]  standard sObjects to retrieve separated with commas
-    -D, --debug [debug]                      generate debug log file [false]
-    -d, --deleteFolders [deleteFolders]      delete/clean temp folders [true]
-    -ht, --hideTechFields [hideTechFields]   hide tech fields [false]
-    -tp, --techFieldPrefix [techFieldPrefix] Tech field prefix ['TECH_']
-    -o, --output [dir]                       salesforce data dictionary directory path [.]
+    -u, --username [username]                             salesforce username
+    -p, --password [password]                             salesforce password
+    -l, --loginUrl [loginUrl]                             salesforce login URL [https://login.salesforce.com]
+    -c, --customObjects [customObjects]                   retrieve all custom objects [true]
+    -lc, --lucidchart [lucidchart]                        generate ERD file for Lucidchart [true]
+    -s, --standardObjects [standardObjects]               standard sObjects to retrieve separated with commas
+    -D, --debug [debug]                                   generate debug log file [false]
+    -d, --deleteFolders [deleteFolders]                   delete/clean temp folders [true]
+    -e, --excludeManagedPackage [excludeManagedPackage]   exclude managed packaged [true]
+    -ht, --hideTechFields [hideTechFields]                hide tech fields [false]
+    -tp, --techFieldPrefix [techFieldPrefix]              Tech field prefix ['TECH_']
+    -o, --output [dir]                                    salesforce data dictionary directory path [.]
 ```
 
 ### Module
