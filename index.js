@@ -106,6 +106,9 @@ module.exports = (config, logger) => {
 
             // If the sObject is a real custom object
             if (object.custom && (object.name.indexOf('__c') !== -1)) {
+              if (config.debug)
+                utils.log('# excludeManagedPackage (' + config.excludeManagedPackage + '): ' + object.name, config);
+
               if (config.excludeManagedPackage) {
                 if ((object.name.split('__').length - 1 < 2))
                   config.objects.push(object.name);
