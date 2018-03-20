@@ -21,12 +21,12 @@ module.exports = (config, logger) => {
   if (typeof config.debug === 'undefined' || config.debug === null) {
     config.debug = false;
   }
-  config.debug = (config.debug.toLowerCase() === "true");
+  config.debug = (config.debug === "true");
 
   if (typeof config.excludeManagedPackage === 'undefined' || config.excludeManagedPackage === null) {
     config.excludeManagedPackage = true;
   }
-  config.excludeManagedPackage = (config.excludeManagedPackage.toLowerCase() === "true");
+  config.excludeManagedPackage = (config.excludeManagedPackage === "true");
 
   if (typeof config.projectName === 'undefined' || config.projectName === null) {
     config.projectName = 'PROJECT';
@@ -34,12 +34,12 @@ module.exports = (config, logger) => {
   if (typeof config.allCustomObjects === 'undefined' || config.allCustomObjects === null) {
     config.allCustomObjects = true;
   }
-  config.allCustomObjects = (config.allCustomObjects.toLowerCase() === "true");
+  config.allCustomObjects = (config.allCustomObjects === "true");
 
   if (typeof config.lucidchart === 'undefined' || config.lucidchart === null) {
     config.lucidchart = true;
   }
-  config.lucidchart = (config.lucidchart.toLowerCase() === "true");
+  config.lucidchart = (config.lucidchart === "true");
 
   if (typeof config.standardObjects === 'undefined' || config.standardObjects === null) {
     config.objects = [
