@@ -1,4 +1,4 @@
-# ![logo](https://gdurl.com/U1xa)  sfdc-generate-data-dictionary
+# ![logo](https://public.gavignon.io/images/sfdc-generate-data-dictionary-logo.png)  sfdc-generate-data-dictionary
 
 Generate data dictionary from a Salesforce Org. This tool can also generate a file that can be imported in Lucidchart to define entities and relationships.
 
@@ -14,7 +14,7 @@ npm install -g sfdc-generate-data-dictionary
 
 ## Screenshots
 
-![screenshot-1](https://gdurl.com/TcCI)
+![screenshot-1](https://public.gavignon.io/images/sfdc-generate-data-dictionary-screen1.png)
 
 ## Usage
 
