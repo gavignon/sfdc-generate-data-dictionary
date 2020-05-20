@@ -14,7 +14,9 @@ npm install -g sfdc-generate-data-dictionary
 
 ## Screenshots
 
-<img src="https://public.gavignon.io/images/sfdc-generate-data-dictionary-screen1.png" width="50%">
+<p align="center">
+  <img src="https://public.gavignon.io/images/sfdc-generate-data-dictionary-screen1.png" width="50%">
+</p>
 
 ## Usage
 
