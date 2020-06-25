@@ -11,6 +11,7 @@ program
   .option('-u, --username [username]', 'salesforce username')
   .option('-p, --password [password]', 'salesforce password')
   .option('-l, --loginUrl [loginUrl]', 'salesforce login URL [https://login.salesforce.com]', 'https://login.salesforce.com')
+  .option('-a, --apiVersion [apiVersion]', 'salesforce API Version [48.0]', '48.0')
   .option('-c, --customObjects [customObjects]', 'retrieve all custom objects [true]', true)
   .option('-lc, --lucidchart [lucidchart]', 'generate ERD file for Lucidchart [true]', true)
   .option('-s, --standardObjects [standardObjects]', 'standard sObjects to retrieve separated with commas')

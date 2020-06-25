@@ -15,6 +15,9 @@ module.exports = (config, logger) => {
   if (typeof config.loginUrl === 'undefined' || config.loginUrl === null) {
     config.loginUrl = 'https://login.salesforce.com';
   }
+  if (typeof config.apiVersion === 'undefined' || config.apiVersion === null) {
+    config.apiVersion = '48.0';
+  }
   if (typeof config.output === 'undefined' || config.output === null) {
     config.output = '.';
   }
@@ -95,7 +98,8 @@ module.exports = (config, logger) => {
   const promise = new Promise((resolve, reject) => {
 
     const conn = new jsforce.Connection({
-      loginUrl: config.loginUrl
+      loginUrl: config.loginUrl,
+      version: config.apiVersion
     });
 
     // Salesforce connection

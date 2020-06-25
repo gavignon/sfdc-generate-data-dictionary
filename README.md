@@ -1,5 +1,5 @@
 # <img src="https://public.gavignon.io/images/sfdc-generate-data-dictionary-title.png" height="32">
-![version](https://img.shields.io/badge/version-1.2.6-blue)
+![version](https://img.shields.io/badge/version-1.2.7-blue)
 
 Generate data dictionary from a Salesforce Org. This tool can also generate a file that can be imported in Lucidchart to define entities and relationships.
 
@@ -33,6 +33,7 @@ $ sgd -h
     -u, --username [username]                             salesforce username
     -p, --password [password]                             salesforce password
     -l, --loginUrl [loginUrl]                             salesforce login URL [https://login.salesforce.com]
+    -a, --apiVersion [apiVersion]                         salesforce API Version [48.0]
     -c, --customObjects [customObjects]                   retrieve all custom objects [true]
     -lc, --lucidchart [lucidchart]                        generate ERD file for Lucidchart [true]
     -s, --standardObjects [standardObjects]               standard sObjects to retrieve separated with commas
