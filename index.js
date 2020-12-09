@@ -5,6 +5,9 @@ const ExcelBuilder = require('./lib/excelbuilder.js');
 const Utils = require('./lib/utils.js');
 
 module.exports = (config, logger) => {
+
+
+
   // Check all mandatory config options
   if (typeof config.username === 'undefined' || config.username === null ||
     typeof config.password === 'undefined' || config.password === null) {
@@ -44,7 +47,7 @@ module.exports = (config, logger) => {
   }
   config.lucidchart = (config.lucidchart === "true" || config.lucidchart === true);
 
-  if (typeof config.standardObjects === 'undefined' || config.standardObjects === null) {
+  if (typeof config.sobjects === 'undefined' || config.sobjects === null) {
     config.objects = [
       'Account',
       'Contact',
@@ -52,20 +55,22 @@ module.exports = (config, logger) => {
     ];
   } else {
     // If an array is passed to the module
-    if (Array.isArray(config.standardObjects)) {
-      config.objects = config.standardObjects;
+    if (Array.isArray(config.sobjects)) {
+      config.objects = config.sobjects;
     } else {
       // Check and parse standObjects string for command-line
       try {
-        config.objects = config.standardObjects.split(',');
+        config.objects = config.sobjects.split(',');
       } catch (e) {
-        let errorMessage = 'Unable to parse standardObjects parameter';
+        let errorMessage = 'Unable to parse sobjects parameter';
         if (config.debug)
           errorMessage += ' : ' + e;
         throw new Error(errorMessage);
       }
     }
   }
+
+
   if (typeof config.techFieldPrefix === 'undefined' || config.techFieldPrefix === null) {
     config.techFieldPrefix = 'TECH_';
   }
