@@ -37,6 +37,9 @@ module.exports = (config, logger) => {
   if (typeof config.projectName === 'undefined' || config.projectName === null) {
     config.projectName = 'PROJECT';
   }
+  if (typeof config.outputTime === 'undefined' || config.outputTime === null) {
+    config.outputTime = false;
+  }
   if (typeof config.allCustomObjects === 'undefined' || config.allCustomObjects === null) {
     config.allCustomObjects = true;
   }

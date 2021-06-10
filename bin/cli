@@ -20,6 +20,7 @@ program
   .option('-d, --deleteFolders [deleteFolders]', 'delete/clean temp folders [true]', true)
   .option('-ht, --hideTechFields [hideTechFields]', 'hide tech fields', false)
   .option('-tp, --techFieldPrefix [techFieldPrefix]', 'Tech field prefix', 'TECH_')
+  .option('-t, --outputTime [outputTime]', 'Display Hours in the file name', false)
   .option('-o, --output [dir]', 'salesforce data dictionary directory path [.]', '.')
   .parse(process.argv);
 
