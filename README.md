@@ -1,5 +1,5 @@
 # <img src="https://public.gavignon.io/images/sfdc-generate-data-dictionary-title.png" height="32">
-![version](https://img.shields.io/badge/version-1.2.11-blue)
+![version](https://img.shields.io/badge/version-1.2.12-blue)
 
 Generate data dictionary from a Salesforce Org. This tool can also generate a file that can be imported in Lucidchart to define entities and relationships.
 
