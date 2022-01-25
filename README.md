@@ -1,5 +1,5 @@
 # <img src="https://public.gavignon.io/images/sfdc-generate-data-dictionary-title.png" height="32">
-![version](https://img.shields.io/badge/version-1.2.13-blue)
+![version](https://img.shields.io/badge/version-1.2.15-blue)
 
 Generate data dictionary from a Salesforce Org. This tool can also generate a file that can be imported in Lucidchart to define entities and relationships.
 
@@ -47,7 +47,7 @@ $ sgd -h
 
 #### Example
 ```
-$ bin/cli -u "my.username@mydomain.com" -p "password" -l "https://test.salesforce.com" --sobjects "Account,Contact,Opportunity,Case" -c false
+$ sgd -u "my.username@mydomain.com" -p "password" -l "https://test.salesforce.com" --sobjects "Account,Contact,Opportunity,Case" -c false
 ```
 
 ### Module
